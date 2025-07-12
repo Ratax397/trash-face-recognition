@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application de Reconnaissance Faciale</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-user-shield"></i> Reconnaissance Faciale</h1>
+            <p>Sécurisez votre accès avec la reconnaissance faciale</p>
+        </div>
+
+        <div class="auth-container">
+            <!-- Onglets -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('login')">
+                    <i class="fas fa-sign-in-alt"></i> Connexion
+                </button>
+                <button class="tab-btn" onclick="showTab('register')">
+                    <i class="fas fa-user-plus"></i> Inscription
+                </button>
+            </div>
+
+            <!-- Formulaire de connexion -->
+            <div id="login" class="tab-content active">
+                <div class="form-container">
+                    <h2>Connexion par Reconnaissance Faciale</h2>
+                    <div class="camera-container">
+                        <video id="loginVideo" autoplay muted></video>
+                        <canvas id="loginCanvas" style="display: none;"></canvas>
+                        <div class="camera-overlay">
+                            <div class="face-frame"></div>
+                        </div>
+                    </div>
+                    <div class="button-group">
+                        <button id="startLoginCamera" class="btn btn-primary">
+                            <i class="fas fa-camera"></i> Démarrer la caméra
+                        </button>
+                        <button id="loginFace" class="btn btn-success" disabled>
+                            <i class="fas fa-search"></i> Reconnaître le visage
+                        </button>
+                    </div>
+                    <div id="loginStatus" class="status-message"></div>
+                </div>
+            </div>
+
+            <!-- Formulaire d'inscription -->
+            <div id="register" class="tab-content">
+                <div class="form-container">
+                    <h2>Inscription</h2>
+                    <form id="registerForm">
+                        <div class="form-group">
+                            <label for="username">
+                                <i class="fas fa-user"></i> Nom d'utilisateur
+                            </label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email
+                            </label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">
+                                <i class="fas fa-lock"></i> Mot de passe
+                            </label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">
+                                <i class="fas fa-lock"></i> Confirmer le mot de passe
+                            </label>
+                            <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        </div>
+                        
+                        <div class="camera-section">
+                            <h3>Capture du visage</h3>
+                            <div class="camera-container">
+                                <video id="registerVideo" autoplay muted></video>
+                                <canvas id="registerCanvas" style="display: none;"></canvas>
+                                <div class="camera-overlay">
+                                    <div class="face-frame"></div>
+                                </div>
+                            </div>
+                            <div class="button-group">
+                                <button type="button" id="startRegisterCamera" class="btn btn-primary">
+                                    <i class="fas fa-camera"></i> Démarrer la caméra
+                                </button>
+                                <button type="button" id="captureFace" class="btn btn-warning" disabled>
+                                    <i class="fas fa-camera-retro"></i> Capturer le visage
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="button-group">
+                            <button type="submit" id="registerBtn" class="btn btn-success" disabled>
+                                <i class="fas fa-user-plus"></i> S'inscrire
+                            </button>
+                        </div>
+                    </form>
+                    <div id="registerStatus" class="status-message"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="renderer.js"></script>
+</body>
+</html>
