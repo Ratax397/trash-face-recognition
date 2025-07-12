@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableau de bord - Face Auth</title>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <div class="container">
+        <div class="dashboard">
+            <h1 class="title">Bienvenue !</h1>
+            <p class="subtitle">Vous êtes connecté avec succès</p>
+            
+            <div class="user-info">
+                <div class="user-avatar" id="userAvatar">
+                    <span id="userInitials">U</span>
+                </div>
+                
+                <h2 id="userName">Utilisateur</h2>
+                <p id="userEmail">email@example.com</p>
+                <p><small>Membre depuis : <span id="memberSince">Date</span></small></p>
+                <p><small>Dernière connexion : <span id="lastLogin">Date</span></small></p>
+            </div>
+            
+            <div class="alert alert-success">
+                <strong>Connexion réussie !</strong> Votre identité a été vérifiée avec succès.
+            </div>
+            
+            <button class="btn btn-secondary" id="logoutBtn">
+                Se déconnecter
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "face-auth-app",
+  "version": "1.0.0",
+  "description": "Application d'authentification par reconnaissance faciale",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder"
+  },
+  "keywords": ["electron", "face-recognition", "authentication"],
+  "author": "Assistant",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4"
+  },
+  "dependencies": {
+    "axios": "^1.6.0"
+  }
+}

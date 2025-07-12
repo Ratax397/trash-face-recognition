@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion - Face Auth</title>
+    <link rel="stylesheet" href="../styles/global.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Face Auth</h1>
+        <p class="subtitle">Connectez-vous à votre compte</p>
+        
+        <div class="tabs">
+            <button class="tab active" data-tab="password">Mot de passe</button>
+            <button class="tab" data-tab="face">Reconnaissance faciale</button>
+        </div>
+
+        <!-- Onglet connexion par mot de passe -->
+        <div id="password-tab" class="tab-content active">
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="username">Nom d'utilisateur :</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Mot de passe :</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn">
+                    <span class="btn-text">Se connecter</span>
+                </button>
+            </form>
+        </div>
+
+        <!-- Onglet connexion par reconnaissance faciale -->
+        <div id="face-tab" class="tab-content">
+            <div class="form-group">
+                <label for="face-username">Nom d'utilisateur :</label>
+                <input type="text" id="face-username" name="face-username" required>
+            </div>
+            
+            <div class="camera-container">
+                <div class="camera-preview" id="cameraPreview">
+                    <span>Cliquez sur "Démarrer caméra" pour commencer</span>
+                </div>
+                
+                <div class="camera-controls">
+                    <button type="button" class="btn" id="startCamera">Démarrer caméra</button>
+                    <button type="button" class="btn btn-secondary" id="capturePhoto" style="display: none;">Capturer photo</button>
+                    <button type="button" class="btn" id="faceLogin" style="display: none;">Se connecter</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="message"></div>
+        
+        <p style="margin-top: 30px;">
+            Pas encore de compte ? 
+            <a href="#" class="link" id="registerLink">S'inscrire</a>
+        </p>
+    </div>
+
+    <script src="../js/api.js"></script>
+    <script src="../js/camera.js"></script>
+    <script src="../js/login.js"></script>
+</body>
+</html>
